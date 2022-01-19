@@ -1,0 +1,39 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+// draggable cursor - grab
+.draggable {
+  cursor: grab;
+  .gu-unselectable & {
+    cursor: grabbing;
+  }
+}
+
+// draggable cursor - move
+.draggable-move {
+  cursor: move;
+  .gu-unselectable & {
+    cursor: move;
+  }
+}
+
+// multiple list
+#multiple-list-group-a,
+#multiple-list-group-b {
+  min-height: 5.714rem;
+}
+
+// Handle
+#dd-with-handle {
+  .list-group {
+    min-height: 5.714rem;
+    .handle {
+      // handle in list-group
+      padding: 2px 6px 0;
+      margin-right: 10px;
+      background-color: map-get($grey-color, lighten-3);
+      font-size: 1.2rem;
+    }
+  }
+}

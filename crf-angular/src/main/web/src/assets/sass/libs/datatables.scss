@@ -1,0 +1,271 @@
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/bootstrap.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+.ngx-datatable {
+  &.bootstrap {
+    &.core-bootstrap {
+      &.height-70-vh {
+        height: 70vh !important;
+      }
+
+      .datatable-header {
+        background-color: $body-bg;
+
+        .datatable-header-cell {
+          border-bottom: 0;
+        }
+      }
+
+      .datatable-body-row {
+        border-color: $border-color;
+
+        &.datatable-row-even {
+          background-color: initial;
+        }
+
+        &.active {
+          background-color: $primary;
+
+          i {
+            color: $white !important;
+          }
+        }
+
+        .datatable-body-cell-label {
+          .cell-line-height {
+            line-height: 1.25;
+          }
+        }
+
+        .datatable-body-cell {
+          display: flex;
+          align-items: center;
+
+        }
+      }
+
+      .datatable-footer {
+        background-color: transparent;
+        color: $body-color;
+
+        .datatable-pager {
+          .pager {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            li {
+              margin: 0;
+
+              &:first-child a {
+                margin: 0;
+              }
+
+              &:first-child,
+              &:last-child,
+              &:nth-child(2),
+              &:nth-last-child(2) {
+                a {
+                  padding: 1.1rem 1.035rem;
+
+                  i {
+                    position: absolute;
+                    top: 0.55rem;
+                    left: 0.4rem;
+                  }
+                }
+              }
+
+              &.disabled {
+                a {
+                  color: map-get($grey-color, darken-1);
+                  background-color: $pagination-disabled-bg;
+                }
+              }
+
+              &:not(.disabled) {
+                a {
+                  color: $pagination-color;
+
+                  &:hover {
+                    background-color: $pagination-hover-bg !important;
+                    border-color: $pagination-hover-border-color;
+                  }
+                }
+
+                &.active {
+                  a {
+                    z-index: 3;
+                    color: $white;
+                    background-color: $primary !important;
+                    border-color: $primary;
+                    font-weight: inherit;
+                  }
+                }
+
+                &:hover a {
+                  background-color: $pagination-bg;
+                  font-weight: inherit;
+                }
+              }
+
+              a {
+                position: relative;
+                display: block;
+                padding: 1.1rem $pagination-padding-x;
+                margin: 0 0 0 5px;
+                line-height: 0.1;
+                background-color: $pagination-bg;
+                border: $pagination-border-width solid $pagination-border-color;
+                border-radius: $border-radius;
+                font-size: $font-size-root;
+
+                i {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.header-height-50 {
+        .datatable-header {
+          height: 50px !important;
+        }
+      }
+    }
+
+    .datatable-footer .datatable-pager {
+
+      .datatable-icon-left,
+      .datatable-icon-skip,
+      .datatable-icon-right,
+      .datatable-icon-prev {
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+// media query for Small & Medium devices
+@media (max-width: 768px) {
+  .page-count {
+    display: none;
+  }
+
+  .datatable-pager {
+    text-align: center !important;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .desktop-hidden {
+    display: initial;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .desktop-hidden {
+    display: none;
+  }
+
+  .mobile-hidden {
+    display: initial;
+  }
+}
+
+html body.layout-dark {
+
+  // for dark and transparent layouts
+  .datatable-footer .pager li.disabled a {
+    color: $dl-disabled-color;
+  }
+
+  // for dark layout
+  &:not(.layout-transparent) {
+    .ngx-datatable.bootstrap {
+      .datatable-header {
+        background-color: $bg-color-dark;
+      }
+
+      .datatable-body-row {
+        border-color: $dl-border-color;
+      }
+
+      .datatable-footer {
+        color: $dl-text-color;
+
+        .pager li {
+
+          &.disabled a,
+          a {
+            background-color: $dl-bg-color;
+            border-color: $dl-border-color;
+          }
+
+          &:not(.disabled) {
+            &:hover a {
+              background-color: $dl-bg-color;
+            }
+
+            &:not(.active) a:hover {
+              background-color: $dl-bg-color !important;
+              border-color: $dl-border-color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // for transparent layout
+  &.layout-transparent {
+    .ngx-datatable.bootstrap {
+      .datatable-header {
+        background-color: $tl-card-bg-color;
+      }
+
+      .datatable-body-row {
+        border-color: $tl-border-color;
+      }
+
+      .datatable-footer {
+        color: $tl-text-color;
+
+        .pager li {
+
+          &.disabled a,
+          a {
+            background-color: $tl-card-bg-color;
+            border-color: $tl-card-bg-color;
+          }
+
+          &:not(.disabled) {
+            a {
+              color: $tl-text-color;
+            }
+
+            &:hover a {
+              background-color: $tl-card-bg-color;
+            }
+
+            &:not(.active) a:hover {
+              background-color: $tl-card-bg-color !important;
+              border-color: $tl-card-bg-color !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

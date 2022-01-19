@@ -1,0 +1,21 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+// apex chart tooltip
+.apexcharts-tooltip,
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+    color: $body-color !important;
+}
+
+// icons
+.apexcharts-toolbar {
+    [class*=apexcharts-] {
+        svg {
+            fill: $text-muted;
+        }
+        &:hover svg {
+            fill: $text-muted !important;
+        }
+    }
+}

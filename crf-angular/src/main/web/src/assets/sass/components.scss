@@ -1,0 +1,70 @@
+// Custom Components
+
+// Core variables and mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Core variables and mixins overrides
+@import "src/assets/sass/core/variables/variables";
+@import "node_modules/bootstrap/scss/variables";
+
+// Mixins
+@import "src/assets/sass/core/mixins/buttons";
+@import "src/assets/sass/core/mixins/shadows";
+@import "src/assets/sass/core/mixins/utilities";
+@import "src/assets/sass/core/mixins/timeline";
+
+// Overrides user variable
+@import "src/assets/sass/core/variables/app-variables";
+// Layouts
+@import "src/assets/sass/core/layouts/content";
+
+// Components
+@import "src/assets/sass/components/utilities";
+@import "src/assets/sass/components/helper";
+@import "src/assets/sass/components/customizer";
+@import "src/assets/sass/components/components";
+@import "src/assets/sass/components/misc";
+@import "src/assets/sass/components/bootstrap-social";
+@import "src/assets/sass/components/responsive";
+@import "src/assets/sass/components/demo";
+@import "src/assets/sass/components/ex-component-avatar";
+
+@import "src/assets/sass/core/mixins/chartist";
+@import "src/assets/sass/plugins/chartist";
+
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
+@import "~prismjs/themes/prism-okaidia";
+@import "~ngx-ui-switch/ui-switch.component.scss";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import '~angular-archwizard/archwizard.css';
+@import '~swiper/swiper-bundle.min.css';
+
+//------------------- below are the files where _palette-variables.scss is included and map-get() is used -------------------
+// Layouts
+@import "src/assets/sass/core/layouts/sidebar-content";
+@import "src/assets/sass/components/notification-sidebar";
+// Pages
+@import "src/assets/sass/pages/authentication";
+@import "src/assets/sass/pages/page-faq";
+@import "src/assets/sass/pages/page-gallery";
+@import "src/assets/sass/pages/page-search";
+@import "src/assets/sass/pages/page-knowledge";
+@import "src/assets/sass/pages/page-user-profile";
+@import "src/assets/sass/pages/page-coming-soon";
+@import "src/assets/sass/components/timeline-horizontal";
+@import "src/assets/sass/components/timeline-vertical";
+
+@import "src/assets/sass/pages/app-email";
+@import "src/assets/sass/pages/app-chat";
+@import "src/assets/sass/pages/app-taskboard";
+@import "src/assets/sass/pages/app-calendar";
+@import "src/assets/sass/pages/charts-apex";
+
+@import "src/assets/sass/pages/ex-component-sweet-alerts";
+@import "src/assets/sass/pages/ex-component-toastr";
+@import "src/assets/sass/pages/ex-component-nouislider";
+@import "src/assets/sass/pages/ex-component-dragndrop";
+@import "src/assets/sass/pages/ex-component-swiper";

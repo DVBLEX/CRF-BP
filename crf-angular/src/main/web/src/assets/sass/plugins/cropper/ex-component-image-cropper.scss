@@ -1,0 +1,20 @@
+/*!
+ * Cropper v@VERSION
+ * https://github.com/fengyuanchen/cropper
+ *
+ * Copyright (c) 2014-@YEAR Fengyuan Chen and contributors
+ * Released under the MIT license
+ *
+ * Date: @DATE
+ */
+
+// We have extended the vendor file and made .scss file and this file is compiled and included in the page.
+
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+@import "variables";
+@import "mixins";
+@import "main";
+@import "utilities";
+@import "custom";

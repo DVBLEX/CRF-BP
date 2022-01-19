@@ -1,0 +1,228 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+.ct-grid {
+  stroke-dasharray: 0px;
+  stroke: rgba($black, 0.1);
+}
+
+.ct-label {
+  font-size: 0.9rem;
+}
+
+// Widget line Chart CSS Starts
+.WidgetlineChart {
+  .ct-point {
+    stroke-width: 0px;
+  }
+
+  .ct-line {
+    stroke: rgba($white, 0.6);
+  }
+
+  .ct-grid {
+    stroke-dasharray: 0px;
+    stroke: transparent !important;
+  }
+
+  &shadow {
+    -webkit-filter: drop-shadow(0px 13px 6px rgba($black, 0.5));
+    filter: drop-shadow(0px 13px 6px rgba($black, 0.5));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+// Widget line Chart CSS Ends
+
+
+// Line with Area Chart CSS Starts
+.lineArea {
+  .ct-line {
+    stroke-width: 0px;
+  }
+
+  .ct-point {
+    stroke-width: 0px;
+  }
+
+  .ct-series-a {
+    .ct-area {
+      fill-opacity: 0.7;
+      fill: url(#gradient1) !important;
+    }
+  }
+
+  .ct-series-b .ct-area {
+    fill: url(#gradient) !important;
+    fill-opacity: 0.9;
+  }
+}
+// Line with Area Chart 1 CSS Ends
+
+
+// Stack Bar Chart CSS Starts
+.Stackbarchart {
+  .ct-series-a {
+    .ct-bar {
+      stroke: url(#linear) !important
+    }
+  }
+
+  .ct-series-b {
+    .ct-bar {
+      stroke: map-get($grey-color, lighten-3);
+    }
+  }
+}
+// Stack Bar Chart CSS Ends
+
+// Shopping Cart
+.shopping-cart {
+  i.ft-trash-2 {
+    cursor: pointer;
+
+    &:hover {
+      color: map-get($danger-color, base);
+    }
+  }
+
+  table td {
+    vertical-align: middle;
+  }
+}
+
+
+// Line with Area Chart 2 CSS Starts
+.lineAreaDashboard {
+  .ct-line {
+    fill: none;
+    stroke-width: 2px;
+  }
+
+  .ct-point-circle {
+    stroke-width: 2px;
+    fill: $white;
+  }
+
+  .ct-series-a {
+    .ct-area {
+      fill: url(#gradient2) !important;
+      fill-opacity: 0.8;
+    }
+
+    .ct-line {
+      stroke: map-get($info-color, lighten-1);
+    }
+
+    .ct-point-circle {
+      stroke: map-get($info-color, base);
+    }
+  }
+
+  .ct-series-b {
+    .ct-area {
+      fill: url(#gradient3) !important;
+      fill-opacity: 0.8;
+    }
+
+    .ct-line {
+      stroke: map-get($success-color, lighten-1);
+    }
+
+    .ct-point-circle {
+      stroke: map-get($success-color, base);
+    }
+  }
+}
+// Line with Area Chart 2 CSS Ends
+
+
+// Line Chart CSS Starts
+.lineChart {
+  .ct-line {
+    fill: none;
+    stroke: $white;
+    stroke-width: 1px;
+  }
+
+  .ct-label {
+    color: $white;
+  }
+
+  .ct-point-circle {
+    stroke-width: 2px;
+    fill: $white;
+  }
+
+  .ct-series-a {
+
+    .ct-point-circle,
+    .ct-point {
+      stroke: $white;
+    }
+  }
+
+  &Shadow {
+    -webkit-filter: drop-shadow(0px 25px 8px rgba($black, 0.5));
+    filter: drop-shadow(0px 25px 8px rgba($black, 0.5));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+// Line Chart  CSS Ends
+
+// Bar Chart CSS Starts
+.BarChart {
+  .ct-series-a .ct-bar {
+    &:nth-of-type(4n+1) {
+      stroke: url(#gradient7);
+    }
+
+    &:nth-of-type(4n+2) {
+      stroke: url(#gradient5);
+    }
+
+    &:nth-of-type(4n+3) {
+      stroke: url(#gradient6);
+    }
+
+    &:nth-of-type(4n+4) {
+      stroke: url(#gradient4);
+    }
+  }
+
+  &Shadow {
+    -webkit-filter: drop-shadow(0px 20px 8px rgba($black, 0.3));
+    filter: drop-shadow(0px 20px 8px rgba($black, 0.3));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+// Bar Chart CSS Ends
+
+
+// Donut Chart  CSS Ends
+.donut {
+  .ct-label {
+    font-size: 20px;
+  }
+
+  .ct-done .ct-slice-donut {
+    stroke: map-get($success-color, base);
+    stroke-width: 24px !important;
+  }
+
+  .ct-progress .ct-slice-donut {
+    stroke: map-get($warning-color, base);
+    stroke-width: 16px !important;
+  }
+
+  .ct-outstanding .ct-slice-donut {
+    stroke: map-get($primary-color, base);
+    stroke-width: 8px !important;
+  }
+
+  .ct-started .ct-slice-donut {
+    stroke: map-get($info-color, base);
+    stroke-width: 32px !important;
+  }
+}
+// Donut Chart  CSS Ends

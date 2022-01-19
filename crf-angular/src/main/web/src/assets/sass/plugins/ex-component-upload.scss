@@ -1,0 +1,61 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.dropzone {
+  min-height: 300px;
+  border: 2px dashed theme-color("primary");
+  background: $body-bg;
+
+  .dz-message {
+    font-size: 2rem;
+    position: absolute;
+    left: 1.67rem;
+    width: calc(100% - 3.3rem);
+    height: 150px;
+    color: theme-color("primary");
+    text-align: center;
+  }
+
+  .dz-message:before {
+    content: "\e864";
+    font-family: "feather";
+    font-size: 4rem;
+    position: absolute;
+    top: 70px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    left: 50%;
+    margin-left: -40px;
+    line-height: 1;
+    z-index: 2;
+    color: theme-color("primary");
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dz-preview.dz-image-preview {
+    background: transparent;
+  }
+
+  .dz-preview .dz-remove {
+    font-size: 1.1rem;
+    color: theme-color("danger");
+    line-height: 2rem;
+
+    &:before {
+      content: "\e8f6";
+      font-family: "feather";
+      display: inline-block;
+      line-height: 1;
+      z-index: 2;
+      text-indent: 0px;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: theme-color("danger");
+    }
+  }
+}

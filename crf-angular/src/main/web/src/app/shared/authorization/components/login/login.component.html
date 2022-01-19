@@ -1,0 +1,67 @@
+<!--Login Page Starts-->
+<section id="login" class="auth-page">
+        <div class="row auth-height full-height-vh m-0">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card overflow-hidden">
+                    <div class="card-content">
+                        <div class="card-body auth-img">
+                            <div class="row m-0">
+                                <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center p-3 auth-logo-bg">
+                                    <img src="assets/crf-img/logo1.PNG" alt="logo" class="img-fluid" width="300">
+                                </div>
+                                <div class="col-lg-6 col-12 px-4 py-3">
+                                    <h4 class="mb-2 card-title">Login</h4>
+                                    <p>Welcome back, please login to your account.</p>
+                                    <ngb-alert type="light-danger" class="mb-2" *ngIf="isLoginFailed" (close)="isLoginFailed = false">
+                                        <p class="mb-0">Login failed!</p>
+                                    </ngb-alert>
+                                    <form [formGroup]="loginForm">
+                                        <div class="form-group">
+                                            <input type="text" formControlName="username" class="form-control" placeholder="Username"
+                                                   [ngClass]="{ 'is-invalid': loginFormSubmitted && lf.username.invalid, 'is-valid': loginFormSubmitted && !lf.username.invalid }"
+                                                   required>
+                                            <div *ngIf="loginFormSubmitted && (lf.username.invalid || lf.username.errors?.required)"
+                                                 class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is
+                                                required</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" formControlName="password" class="form-control" placeholder="Old Password"
+                                                   [ngClass]="{ 'is-invalid': loginFormSubmitted && lf.password.invalid, 'is-valid': loginFormSubmitted && !lf.password.invalid }"
+                                                   required>
+                                            <div *ngIf="loginFormSubmitted && (lf.password.invalid || lf.password.errors?.required)"
+                                                 class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> This is required
+                                            </div>
+                                        </div>
+                                        <div class="d-sm-flex justify-content-between mb-3 font-small-2">
+                                            <div class="remember-me mb-2 mb-sm-0">
+                                                <div class="checkbox auth-checkbox">
+                                                    <input type="checkbox" formControlName="rememberMe" class="form-control" id="rememberMe">
+                                                    <label for="rememberMe"><span class="font-small-2 mb-3 font-weight-normal">Remember Me</span></label>
+                                                </div>
+                                            </div>
+                                            <a [routerLink]="['/pages/forgotpassword']">Forgot Password?</a>
+                                        </div>
+                                        <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                            <a [routerLink]="['/authorization/registrationAdmin']" class="btn bg-light-primary mb-2 mb-sm-0">Register</a>
+                                            <a  class="btn btn-primary" (click)="onSubmit()">Login</a>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6 class="text-primary m-0">Or Login With</h6>
+                                        <ngx-spinner></ngx-spinner>
+                                        <div class="login-options">
+                                            <a class="btn btn-sm btn-social-icon btn-google mr-1" ><span class="fa fa-google"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</section>
+<!--Login Page Ends-->
+

@@ -1,0 +1,35 @@
+// Core variables and mixins
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Load variable overrides
+@import "src/assets/sass/core/variables/variables";
+@import "node_modules/bootstrap/scss/variables";
+@import "src/assets/sass/core/mixins/shadows";
+@import "src/assets/sass/core/mixins/typography";
+@import "src/assets/sass/core/mixins/utilities";
+@import "src/assets/sass/core/mixins/buttons";
+@import "src/assets/sass/core/mixins/list-group";
+
+// Overrides user variable
+@import "src/assets/sass/core/variables/app-variables";
+
+@import "src/assets/sass/bootstrap-extended/alert";
+@import "src/assets/sass/bootstrap-extended/reboot";
+@import "src/assets/sass/bootstrap-extended/collapse";
+@import "src/assets/sass/bootstrap-extended/badge";
+@import "src/assets/sass/bootstrap-extended/buttons";
+@import "src/assets/sass/bootstrap-extended/card";
+@import "src/assets/sass/bootstrap-extended/dropdown";
+@import "src/assets/sass/bootstrap-extended/carousel";
+@import "src/assets/sass/bootstrap-extended/modal";
+@import "src/assets/sass/bootstrap-extended/navs";
+@import "src/assets/sass/bootstrap-extended/navbar";
+@import "src/assets/sass/bootstrap-extended/popover";
+@import "src/assets/sass/bootstrap-extended/progress";
+@import "src/assets/sass/bootstrap-extended/toast";
+@import "src/assets/sass/bootstrap-extended/type";
+@import "src/assets/sass/bootstrap-extended/grid";
+@import "src/assets/sass/bootstrap-extended/code";
+@import "src/assets/sass/bootstrap-extended/list-group";
+@import "src/assets/sass/bootstrap-extended/forms";

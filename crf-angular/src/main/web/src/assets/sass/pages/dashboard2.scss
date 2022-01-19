@@ -1,0 +1,264 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+.ct-grid {
+  stroke-dasharray: 0px;
+  stroke: rgba($black, 0.1);
+}
+
+.ct-label {
+  font-size: 0.9rem;
+}
+
+//widget Line Chart CSS Starts
+.WidgetlineChart {
+  .ct-point {
+    stroke-width: 0px;
+  }
+
+  &.WidgetChart1 {
+    &.WidgetlineChartShadow {
+      -webkit-filter: drop-shadow(0px 15px 6px rgba(map-get($info-color, base), 0.6));
+      filter: drop-shadow(0px 15px 6px rgba(map-get($info-color, base), 0.6));
+    }
+
+    .ct-line {
+      stroke: map-get($info-color, base);
+    }
+  }
+
+  &.WidgetChart2 {
+    &.WidgetlineChartShadow {
+      -webkit-filter: drop-shadow(0px 15px 6px rgba(map-get($warning-color, base), 0.6));
+      filter: drop-shadow(0px 15px 6px rgba(map-get($warning-color, base), 0.6));
+    }
+
+    .ct-line {
+      stroke: map-get($warning-color, base);
+    }
+  }
+
+  &.WidgetChart3 {
+    &.WidgetlineChartShadow {
+      -webkit-filter: drop-shadow(0px 15px 6px rgba(map-get($primary-color, base), 0.6));
+      filter: drop-shadow(0px 15px 6px rgba(map-get($primary-color, base), 0.6));
+    }
+
+    .ct-line {
+      stroke: map-get($primary-color, base);
+    }
+  }
+
+  &.WidgetChart4 {
+    &.WidgetlineChartShadow {
+      -webkit-filter: drop-shadow(0px 15px 6px rgba(map-get($success-color, base), 0.6));
+      filter: drop-shadow(0px 15px 6px rgba(map-get($success-color, base), 0.6));
+    }
+
+    .ct-line {
+      stroke: map-get($success-color, base);
+    }
+  }
+}
+
+//widget Line Chart CSS Ends
+
+
+//Line Chart 1 CSS Starts
+.lineChart1 {
+
+  // apex chart tooltip
+  .apexcharts-tooltip {
+    color: $body-color !important;
+  }
+
+  &Shadow {
+    -webkit-filter: drop-shadow(0px 15px 5px rgba($black, 0.1));
+    filter: drop-shadow(0px 15px 5px rgba($black, 0.1));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+
+//Line Chart 1 CSS Ends
+
+
+//Donut Chart 1 CSS Starts
+.donut1 {
+  .ct-label {
+    font-size: 4rem;
+    fill: map-get($warning-color, base);
+  }
+
+  .ct-outstanding .ct-slice-donut {
+    stroke: map-get($grey-color, lighten-4);
+  }
+
+  .ct-done .ct-slice-donut {
+    stroke: map-get($warning-color, lighten-2);
+  }
+}
+
+//Donut Chart 1 CSS Ends
+
+
+//Donut Chart 2 CSS Starts
+.donut2 {
+  .ct-label {
+    font-size: 4rem;
+    fill: map-get($info-color, base);
+  }
+
+  .ct-outstanding .ct-slice-donut {
+    stroke: map-get($grey-color, lighten-4);
+  }
+
+  .ct-done .ct-slice-donut {
+    stroke: map-get($info-color, lighten-2);
+  }
+}
+
+//Donut Chart 2 CSS Ends
+
+
+//Donut Chart 3 CSS Starts
+.donut3 {
+  .ct-label {
+    font-size: 4rem;
+    fill: map-get($danger-color, base);
+  }
+
+  .ct-outstanding .ct-slice-donut {
+    stroke: map-get($grey-color, lighten-4);
+  }
+
+  .ct-done .ct-slice-donut {
+    stroke: map-get($danger-color, lighten-2);
+  }
+}
+
+//Donut Chart 3 CSS Ends
+.weather-pic {
+  object-fit: cover;
+}
+
+
+//Line chart 2 CSS Starts
+.lineChart2 {
+  .ct-point-circle {
+    stroke-width: 2px;
+    fill: $white;
+  }
+
+  .ct-line {
+    stroke-width: 1px;
+  }
+
+  .ct-series-a {
+    .ct-line {
+      stroke: map-get($info-color, lighten-1);
+    }
+
+    .ct-point-circle {
+      stroke: map-get($info-color, base);
+    }
+  }
+
+  .ct-series-b {
+    .ct-line {
+      stroke: map-get($success-color, lighten-1);
+    }
+
+    .ct-point-circle {
+      stroke: map-get($success-color, base);
+    }
+  }
+
+  &Shadow {
+    -webkit-filter: drop-shadow(0px 16px 6px rgba($black, 0.15));
+    filter: drop-shadow(0px 16px 6px rgba($black, 0.15));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+//Line chart 2 CSS Ends
+
+
+//widget Line Chart 2 CSS Starts
+.WidgetlineChart5 {
+  .ct-point {
+    stroke-width: 0px;
+  }
+
+  .ct-line {
+    stroke: url(#widgradient1) !important;
+  }
+
+  .ct-grid {
+    stroke: transparent !important;
+  }
+
+  &Shadow {
+    -webkit-filter: drop-shadow(0px 20px 6px rgba($black, 0.2));
+    filter: drop-shadow(0px 20px 6px rgba($black, 0.2));
+    /* Same syntax as box-shadow, except for the spread property */
+  }
+}
+//widget Line Chart 2 CSS Ends
+
+.dash2-user {
+  img {
+    width: 6.5rem;
+    background-color: transparent;
+    border: 2px solid map-get($primary-color, base);
+    padding: 0.4rem;
+  }
+}
+
+.dash2-progress {
+  height: 1rem;
+  background-color: $body-bg;
+
+  .progress-bar {
+    border-radius: 0;
+
+    &:last-child {
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+}
+
+// Line area chart CSS Starts
+.lineAreaChart {
+  .ct-line {
+    stroke-width: 1px;
+  }
+
+  .ct-point-circle {
+    stroke-width: 2px;
+    fill: $white;
+  }
+
+  .ct-series-a {
+    .ct-area {
+      fill: map-get($primary-color, lighten-1);
+    }
+
+    .ct-point-circle,
+    .ct-line {
+      stroke: map-get($primary-color, base);
+    }
+  }
+
+  .ct-series-b {
+    .ct-area {
+      fill: map-get($danger-color, lighten-1);
+      fill-opacity: 0.1;
+    }
+
+    .ct-point-circle {
+      stroke: map-get($danger-color, base);
+    }
+  }
+}
+// Line area chart CSS Ends

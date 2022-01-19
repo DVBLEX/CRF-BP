@@ -1,0 +1,79 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+ngb-datepicker {
+  border-color: $border-color;
+  border-radius: $border-radius !important;
+  button:hover {
+    box-shadow: none !important;
+  }
+}
+.ngb-dp-header {
+  background-color: $white !important;
+}
+.ngb-dp-weekdays,
+.ngb-dp-month-name {
+  background-color: $white !important;
+  border: 0 !important;
+}
+[ngbDatepickerDayView] {
+  border-radius: $border-radius !important;
+  &:hover {
+    background-color: $body-bg;
+  }
+}
+ngb-datepicker-navigation-select .custom-select+.custom-select {
+  margin-left: 0.8rem;
+}
+.ngb-dp-content.ngb-dp-months {
+  margin-top: 0.5rem;
+}
+.custom-day {
+  text-align: center;
+  padding: 0.185rem 0.25rem;
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  border-radius: $border-radius;
+  &.bg-primary {
+    color: $white;
+  }
+  &.focused {
+    background-color: map-get($grey-color, lighten-2);
+  }
+  &.range,
+  &:hover {
+    background-color: $info;
+    color: $white;
+  }
+  &.faded {
+    opacity: 0.6;
+  }
+}
+
+
+// for dark and transparent layouts
+html body.layout-dark {
+  ngb-datepicker,
+  .ngb-dp-header,
+  .ngb-dp-weekdays,
+  .ngb-dp-month-name {
+    background-color: $dl-bg-color !important;
+  }
+  ngb-datepicker {
+    border-color: $dl-border-color;
+  }
+  [ngbDatepickerDayView] {
+    color: $dl-text-color;
+    &:hover {
+      background-color: $bg-color-dark;
+    }
+  }
+  .custom-day:not(.range) {
+    color: $dl-text-color;
+  }
+  .custom-select:disabled {
+    background-color: $bg-color-dark;
+  }
+}

@@ -1,0 +1,71 @@
+// default date/time picker
+input[class*="pickadate"],
+input[class*="pickatime"],
+input[class*="birthdate"] {
+  background-color: transparent !important;
+}
+
+// picker
+.picker--opened .picker__holder {
+  border-radius: $border-radius;
+  margin-top: 0.5rem;
+  @include card-shadow();
+}
+
+// specific css had to be written for border-radius due to the div that generates picker popup
+.input-group>.input-group-prepend~.form-control.picker__input {
+  border-top-right-radius: .35rem;
+  border-bottom-right-radius: .35rem;
+}
+
+// any day in picker
+.picker__day {
+  border-radius: $border-radius;
+}
+
+// selected date
+.picker__day--highlighted,
+.picker__day--highlighted:hover,
+.picker--focused .picker__day--highlighted {
+  background-color: $primary !important;
+  border-radius: $border-radius;
+}
+
+// today's date not selected - before
+.picker__day--today:before {
+  top: 4px;
+  right: 4px;
+  border-top-color: $primary;
+}
+
+// today's date selected - before
+.picker__day--highlighted:before {
+  border-top-color: $white;
+}
+
+// today button
+.picker__button--today:before {
+  border-top-color: $primary;
+}
+
+// close button
+.picker__button--close:before {
+  font-family: feather;
+  content: "\e8f6";
+  font-weight: 700;
+}
+
+// selected time
+.picker__list-item--highlighted,
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+  background-color: $primary !important;
+}
+
+// IE specific for picker alignment
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+  .picker {
+    left: 0;
+  }
+}

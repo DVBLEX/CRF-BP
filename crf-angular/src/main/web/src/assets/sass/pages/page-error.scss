@@ -1,0 +1,8 @@
+// smaller photo in smaller screen
+@media(max-width:768px) {
+  #error {
+    .error-img {
+      width: 250px;
+    }
+  }
+}

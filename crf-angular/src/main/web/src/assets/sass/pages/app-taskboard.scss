@@ -1,0 +1,33 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.dragdrop-container {
+  & > div {
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    transition: opacity 0.4s ease-in-out;
+  }
+  &:nth-child(odd) {
+    background-color: rgba($black, 0.2);
+  }
+
+  .users-list {
+    li {
+      line-height: 1.5;
+      img {
+        border: 2px solid $white;
+      }
+      & + li {
+        margin-left: -0.4rem;
+      }
+    }
+  }
+}
+
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+  transition: opacity 0.4s ease-in-out;
+}

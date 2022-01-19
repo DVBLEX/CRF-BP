@@ -1,0 +1,119 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+.fc-view-container {
+  .fc-day-grid-event {
+    margin: 0 5px 5px;
+    padding: 5px 10px;
+  }
+
+  .fc-time {
+    font-weight: normal !important;
+  }
+}
+
+.fc-event {
+  font-size: inherit !important;
+  font-weight: bold !important;
+  span {
+    color: $white;
+  }
+}
+
+.fc-button-primary {
+  background-color: map-get($primary-color, lighten-4);
+  border-color: map-get($primary-color, lighten-4);
+  color: map-get($primary-color, base);
+  outline: none !important;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none !important;
+    background-color: map-get($primary-color, base) !important;
+    border-color: map-get($primary-color, base) !important;
+    color: $white;
+  }
+
+  &:disabled {
+    background-color: map-get($secondary-color, lighten-1);
+    border-color: map-get($secondary-color, lighten-1);
+    &:hover {
+      background-color: map-get($secondary-color, lighten-1) !important;
+      border-color: map-get($secondary-color, lighten-1) !important;
+    }
+  }
+
+  &.fc-button-active {
+    background-color: map-get($primary-color, base) !important;
+    border-color: map-get($primary-color, base) !important;
+    color: $white;
+  }
+}
+
+// other than current month
+td.fc-other-month.fc-past {
+  background: $body-bg;
+}
+// table border-color
+.fc-view>table {
+  th, td {
+    border-color: $border-color;
+  }
+}
+
+/* Apply same opacity to all day events */
+.fc-ltr .fc-h-event.fc-not-end,
+.fc-rtl .fc-h-event.fc-not-start {
+  opacity: 0.65 !important;
+  margin-left: 15px !important;
+  padding: 5px 10px !important;
+}
+
+/* Apply same opacity to all day events */
+.fc-day-grid-event.fc-h-event.fc-event.fc-not-start.fc-end {
+  opacity: 0.65 !important;
+  margin-right: 15px !important;
+  padding: 5px 10px !important;
+}
+
+.fc-events-container {
+  padding: 0 10px;
+  border: 1px solid $border-color;
+  text-align: left;
+  margin-top: 1.6rem;
+
+  .fc-event {
+    padding: 5px 10px;
+    margin: 10px 0;
+  }
+  .checkbox label {
+    margin-top: 2px;
+  }
+}
+
+
+@media (max-width: 849.98px) {
+  #fc-external-drag{
+    .fc-toolbar{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: .5rem;
+      > div{
+        margin-bottom: .5rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .fc-toolbar{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    > div{
+      margin-bottom: .5rem;
+    }
+  }
+}

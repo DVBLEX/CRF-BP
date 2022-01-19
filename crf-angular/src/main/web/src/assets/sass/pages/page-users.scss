@@ -1,0 +1,70 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+/* user page css */
+/*---------------*/
+.users-list-wrapper {
+  .dataTables {
+    &_length {
+      margin-top: 0 !important;
+      select {
+        margin: 0 0.5rem;
+      }
+    }
+
+    &_filter {
+      margin-top: 0 !important;
+    }
+
+    &_wrapper {
+      .dataTables_paginate {
+        .pagination {
+          margin: 0;
+        }
+      }
+
+      .dataTable {
+        thead {
+          tr {
+            th {
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// users view page css
+.users-view {
+  .table-borderless {
+    td {
+      padding: 0.3rem 0;
+      &:first-child {
+        width: 10rem;
+      }
+    }
+  }
+  h6.text-primary {
+    span.text-bold-400 {
+      color: theme-color(primary) !important;
+    }
+  }
+}
+// users view & users edit page common css
+.users-view,
+.users-edit {
+  .users-avatar-shadow {
+    box-shadow: 2px 4px 14px 0 rgba($black, 0.4);
+  }
+  .users-module {
+    .table th {
+      border-top: none;
+    }
+    .table th,
+    .table td {
+      padding: 0.7rem 2.5rem;
+    }
+  }
+}

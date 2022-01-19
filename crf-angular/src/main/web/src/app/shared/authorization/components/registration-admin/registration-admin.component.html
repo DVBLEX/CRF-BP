@@ -1,0 +1,89 @@
+<!--Registration Page Starts-->
+<section id="regestration" class="auth-page">
+    <div class="row auth-height full-height-vh m-0">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+            <div class="card overflow-hidden">
+                <div class="card-content">
+                    <div class="card-body auth-img">
+                        <div class="row m-0">
+                            <div
+                                    class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center text-center auth-img-bg py-2">
+                                <img src="assets/img/gallery/register.png" alt="" class="img-fluid" width="350" height="230">
+                            </div>
+                            <div class="col-lg-6 col-md-12 px-4 py-3">
+                                <h4 class="card-title mb-2">Create Account</h4>
+                                <p>Fill the below form to create a new account.</p>
+
+                                <form [formGroup]="registerForm">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="name" class="form-control mb-2" placeholder="Name"
+                                               [ngClass]="{ 'is-invalid': registerFormSubmitted && rf.name.invalid, 'is-valid': registerFormSubmitted && !rf.name.invalid }"
+                                               required>
+                                        <div *ngIf="registerFormSubmitted && (rf.name.invalid || rf.name.errors?.required)"
+                                             class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Name is
+                                            required</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" formControlName="email" class="form-control mb-2" placeholder="Email"
+                                               [ngClass]="{ 'is-invalid': registerFormSubmitted && rf.email.invalid, 'is-valid': registerFormSubmitted && !rf.email.invalid }"
+                                               required>
+                                        <div *ngIf="registerFormSubmitted && (rf.email.errors?.required)"
+                                             class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Email is
+                                            required</div>
+                                        <div *ngIf="registerFormSubmitted &&  rf.email.errors?.email" class="help-block mt-1 text-danger"> <i
+                                                class="ft-alert-circle align-middle"></i> Email must be a valid email address</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" formControlName="password" class="form-control mb-2" placeholder="Password"
+                                               [ngClass]="{ 'is-invalid': registerFormSubmitted && rf.password.invalid, 'is-valid': registerFormSubmitted && !rf.password.invalid }"
+                                               required>
+                                        <div *ngIf="registerFormSubmitted && (rf.password.errors?.required)"
+                                             class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Password is
+                                            required
+                                        </div>
+                                        <div *ngIf="registerFormSubmitted && (!rf.password.errors?.required && rf.password.errors?.minlength)"
+                                             class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Password must be
+                                            at least 6 characters
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" formControlName="confirmPassword" class="form-control mb-2"
+                                               placeholder="Confirm Password"
+                                               [ngClass]="{ 'is-invalid': registerFormSubmitted && rf.confirmPassword.invalid, 'is-valid': registerFormSubmitted && !rf.confirmPassword.invalid }"
+                                               required>
+                                        <div
+                                                *ngIf="registerFormSubmitted && (rf.confirmPassword.errors?.required)"
+                                                class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Confirm Password is
+                                            required
+                                        </div>
+                                        <div *ngIf="registerFormSubmitted && (rf.confirmPassword.errors?.mustMatch)"
+                                             class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Passwords must
+                                            match
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox auth-checkbox  ">
+                                            <input type="checkbox" id="auth-login" formControlName="acceptTerms" class="form-control">
+                                            <label for="auth-login"><span class="font-small-2 mb-3 font-weight-normal">I accept the terms & conditions</span></label>
+                                            <div *ngIf="registerFormSubmitted && (rf.acceptTerms.invalid || rf.acceptTerms.errors?.required)"
+                                                 class="help-block mt-1 text-danger"> <i class="ft-alert-circle align-middle"></i> Accept Ts & Cs is required
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between flex-sm-row flex-column">
+                                        <a [routerLink]="['/authorization/login']" class="btn bg-light-primary mb-2 mb-sm-0">Back To Login</a>
+                                        <a class="btn btn-primary" (click)="onSubmit()">Register</a>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Registration Page Ends-->
+

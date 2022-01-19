@@ -1,0 +1,88 @@
+<!--table starts-->
+<section id="ng-tables">
+    <div class="row text-left">
+        <div class="col-12">
+            <div class="d-flex justify-content-between">
+                <div class="content-header">Table</div>
+                <button class="btn btn-primary content-header btn-header-text" (click)="openModal(modal)">Add new user</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row text-left">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
+
+                        <form >
+                            <div class="d-flex justify-content-center pb-3">
+                                <div class="ml-3" *ngIf="getIsLoading()">Loading...</div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped" >
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Created Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let user of users$ | async">
+                                        <td>
+                                            <ngb-highlight [result]="user.firstName"></ngb-highlight>
+                                        </td>
+                                        <td>
+                                            <ngb-highlight [result]="user.lastName"></ngb-highlight>
+                                        </td>
+                                        <td>
+                                            <ngb-highlight [result]="user.email"></ngb-highlight>
+                                        </td>
+                                        <td>
+                                            <ngb-highlight [result]="user.dateCreatedString"></ngb-highlight>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="d-flex justify-content-between p-2">
+                                <ngb-pagination [collectionSize]="getCollectionSize()" [(page)]="pageParam.page" [pageSize]="pageParam.size"
+                                                (pageChange)="paginationChange()">
+                                </ngb-pagination>
+
+                                <select class="custom-select" style="width: auto" name="pageSize"
+                                        (change)="selectChange()" [(ngModel)]="pageParam.size">
+                                    <option value="10">10 items per page</option>
+                                    <option value="20">20 items per page</option>
+                                    <option value="30">30 items per page</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--table ends-->
+
+<!--modal starts-->
+<ng-template #modal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+<!--modal ends-->

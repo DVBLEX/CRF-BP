@@ -1,0 +1,53 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+.ng2-tag-input {
+  border-color: $border-color !important;
+}
+tag {
+  background: map-get($primary-color, lighten-4) !important;
+  color: $primary !important;
+  border-radius: $border-radius !important;
+  &:hover {
+    box-shadow: none !important;
+  }
+  .tag-wrapper {
+    line-height: 2rem;
+  }
+  svg {
+    stroke: $primary;
+    height: 2rem !important;
+    path {
+      fill: $primary !important;
+    }
+  }
+}
+.ng2-tag-input__text-input {
+  background-color: transparent;
+  color: $body-color;
+}
+
+
+html body.layout-dark {
+  // for dark layout
+  &:not(.layout-transparent) {
+    .ng2-tag-input__text-input,
+    .ng2-tag-input__text-input::placeholder {
+      color: $dl-text-color;
+    }
+    .ng2-tag-input {
+      border-color: $dl-border-color !important;
+    }
+  }
+  // for transparent layout
+  &.layout-transparent {
+    .ng2-tag-input__text-input,
+    .ng2-tag-input__text-input::placeholder {
+      color: $tl-text-color;
+    }
+    .ng2-tag-input {
+      border-color: $tl-border-color !important;
+    }
+  }
+}

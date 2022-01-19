@@ -1,0 +1,104 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.page-user-profile {
+  .user-profile-images {
+    position: relative;
+
+    // user timeline image positioning
+    .user-timeline-image {
+      min-height: 150px;
+      object-fit: cover;
+    }
+
+    // user profile image positioning
+    .user-profile-image {
+      position: absolute;
+      left: 20px;
+      bottom: -65px;
+      box-shadow: 0px 0px 20px 0px rgba($black, 0.41);
+    }
+  }
+
+  // user profile text positioning
+  .user-profile-text {
+    position: absolute;
+    bottom: 105px;
+    left: 190px;
+    color: $white;
+
+    .profile-text-color {
+      color: $white;
+    }
+  }
+
+  // user profile buttons positioning
+  .user-profile-buttons {
+    padding-left: 11.25rem;
+  }
+
+  // profile info and posts
+  .profile-info-posts {
+    .profile-post {
+      .profile-post-img {
+        max-height: 300px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // user profile stories
+  .user-profile-stories-image {
+    max-height: 300px
+  }
+
+  .user-profile-stories {
+    &.swiper-container {
+      .swiper-slide {
+        width: auto !important;
+        cursor: pointer;
+
+        .user-swiper-text {
+          color: $white;
+          position: absolute;
+          bottom: 15px;
+          left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .user-profile-images {
+    // user profile image
+    .user-profile-image {
+      height: 100px;
+      width: 100px;
+      top: 40%;
+      left: 50% !important;
+      margin-left: -45px;
+      margin-top: 30px;
+    }
+  }
+
+  // user profile text
+  .user-profile-text {
+    top: 50%;
+    left: 50% !important;
+    margin-left: -60px;
+    margin-top: 3rem;
+    color: $headings-color !important;
+    text-align: center !important;
+
+    .profile-text-color {
+      color: $headings-color !important;
+    }
+  }
+
+  // user profile buttons
+  .user-profile-buttons {
+    padding-left: 0 !important;
+    padding-top: 6rem;
+  }
+}

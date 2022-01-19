@@ -1,0 +1,163 @@
+@import "src/assets/sass/core/colors/palette-variables";
+
+.select2-container--classic,
+.select2-container--default {
+  &:focus {
+    outline: none;
+  }
+
+  // single select
+  .select2-selection--single {
+    min-height: $input-height;
+    border: 1px solid $border-color;
+    background-color: transparent;
+    border-radius: $border-radius;
+
+    // Border color on focus
+    &:focus {
+      outline: 0;
+      border-color: $primary !important;
+      box-shadow: $input-focus-box-shadow !important;
+    }
+
+    // Select with icons scss
+    .select2-selection__rendered {
+      height: 100%;
+      color: $body-color;
+      line-height: $input-height;
+      padding-left: 0.75rem;
+      padding-right: 2rem;
+
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+
+    // dropdown arrow height
+    .select2-selection__arrow {
+      height: calc(#{$input-height} - 2px);
+      width: 25px;
+    }
+  }
+
+  // when select container open - scss
+  &.select2-container--open {
+    .select2-selection--single {
+      border-color: $primary !important;
+      outline: 0;
+    }
+  }
+
+  // select container - focus
+  &.select2-container--focus {
+    outline: 0;
+
+    .select2-selection--multiple {
+      border-color: $primary !important;
+      outline: 0;
+    }
+  }
+
+  // multiple select scss
+  .select2-selection--multiple {
+    min-height: $input-height;
+    border: 1px solid $border-color;
+    background-color: transparent;
+    border-radius: $border-radius;
+    line-height: 1;
+
+    &:focus {
+      outline: 0;
+      border-color: $primary !important;
+      box-shadow: $input-focus-box-shadow !important;
+    }
+
+    .select2-selection__rendered {
+      padding: 0 8px;
+
+      // selected items bg color for multiple selection
+      .select2-selection__choice {
+        background-color: $primary !important;
+        border-color: map-get($primary-color, darken-1) !important;
+        color: $white;
+        line-height: 1.5;
+        border-radius: $border-radius;
+      }
+    }
+
+    .select2-selection__choice__remove {
+      color: $white !important;
+      float: right;
+      margin-left: 0.5rem;
+    }
+
+    // select dropdown menu with icons
+    i {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .select2-results__options {
+    .select2-results__option {
+      i {
+        margin-right: 0.5rem;
+      }
+
+      &--highlighted[aria-selected] {
+        background-color: $primary;
+      }
+
+      .select2-results__group {
+        background-color: $body-bg;
+      }
+      &[aria-selected=true] {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  // Optional sizing
+  // ------------------------------
+
+  // Large Single select
+  .select-lg {
+    min-height: $input-height !important;
+    font-size: $font-size-lg;
+  }
+
+  // Small Single select
+  .select-sm {
+    min-height: $input-height-sm !important;
+    font-size: 0.75rem;
+
+    // Single
+    &.select2-selection--single {
+      .select2-selection__rendered {
+        line-height: calc(#{$input-height-sm} - 2px);
+      }
+    }
+
+    // Small Multiple select
+    &.select2-selection--multiple {
+      .select2-selection__rendered {
+        padding-left: 5px;
+
+        li {
+          margin-top: 2px;
+          line-height: 1.2rem;
+        }
+      }
+
+      .select2-search--inline .select2-search__field {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+// img result of AJAX request
+.select2-result-repository__avatar img {
+  width: 50px;
+}

@@ -1,0 +1,30 @@
+<div
+  class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-light navbar-shadow menu-border navbar-brand-center navbar-static {{transparentBGClass}}"
+  role="navigation" data-menu="menu-wrapper" data-nav="brand-center">
+  <!-- Horizontal menu content-->
+  <div class="navbar-container main-menu-content center-layout" data-menu="menu-container">
+    <ul appTopMenuDropdown class="navigation-main nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+      <!-- First level menu -->
+      <li appTopMenulink *ngFor="let menuItem of menuItems" [parent]="menuItem.title" level="{{level + 1}}"
+        [attr.data-menu]="menuItem.class === 'dropdown nav-item' ? 'dropdown' : null" [ngClass]="[menuItem.class]"
+        [routerLinkActive]="menuItem.submenu.length != 0 ? 'active' : 'active'" [routerLinkActiveOptions]="{exact: true}">
+
+        <a appTopMenuAnchorToggle *ngIf="menuItem.submenu.length > 0 && !menuItem.isExternalLink" data-toggle="dropdown"
+          class="dropdown-toggle nav-link d-flex align-items-center">
+          <i [ngClass]="[menuItem.icon]"></i>
+          <span>{{menuItem.title }}</span>
+        </a>
+        <a appTopMenuAnchorToggle routerLink="{{menuItem.path}}" *ngIf="menuItem.submenu.length === 0 && !menuItem.isExternalLink"
+          data-toggle="dropdown" class="nav-link d-flex align-items-center">
+          <i [ngClass]="[menuItem.icon]"></i>
+          <span>{{menuItem.title }}</span>
+        </a>
+        <a [href]="[menuItem.path]" target="_blank" *ngIf="menuItem.isExternalLink" data-toggle="dropdown"
+          class="nav-link d-flex align-items-center">
+          <i [ngClass]="[menuItem.icon]"></i>
+          <span>{{menuItem.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

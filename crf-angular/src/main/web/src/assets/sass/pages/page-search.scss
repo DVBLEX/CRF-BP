@@ -1,0 +1,56 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.search-wrapper {
+  .search-bar {
+    .page-search-input input {
+      background-color: $white;
+    }
+    .search-btn {
+      right: 0.4rem;
+      top: 0.3rem;
+      @include media-breakpoint-down(xs) {
+        padding: 0.65rem 1.25rem;
+      }
+    }
+  }
+  .video-result-swiper {
+    &.swiper-container {
+      .swiper-slide {
+        font-weight: $headings-font-weight;
+        background-color: $white;
+        height: auto;
+        width: 18.66rem;
+        padding: 0.7rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        .slide-content{
+          .card-img-overlay{
+            i{
+              color: rgba($white, 0.65);
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      &:after {
+        width: 2.35rem;
+        height: 2.35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: $primary;
+        box-shadow: 0 2px 4px 0 rgba($black, 0.5) !important;
+      }
+      &.swiper-button-disabled{
+        display: none;
+      }
+    }
+  }
+}

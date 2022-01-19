@@ -1,0 +1,23 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.leaflet {
+  &-pane {
+    z-index: 4;
+  }
+
+  &-top,
+  &-bottom {
+    z-index: 5;
+  }
+
+  &-container {
+    .leaflet-control-zoom {
+
+      &-in,
+      &-out {
+        color: $body-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+// large switchery
+.switchery.switchery-large {
+	height: 30px !important;
+	width: 54px !important;
+	&>small {
+		height: 30px !important;
+		width: 30px !important;
+	}
+}
+
+// default switchery
+.switchery.switchery-default {
+	height: 1.5rem;
+	width: 40px;
+	&>small {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
+}
+
+// small switchery
+.switchery.switchery-small {
+	height: 18px;
+	width: 30px;
+	&>small {
+		height: 18px;
+		width: 18px;
+	}
+}
+
+// extra-small switchery
+.switchery.switchery-xsmall {
+	height: 14px;
+	width: 24px;
+	&>small {
+		height: 14px;
+		width: 14px;
+	}
+}

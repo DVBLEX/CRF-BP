@@ -1,0 +1,60 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.faq-wrapper {
+  .faq-bg {
+    background: red;
+    /*
+    background: url('src/assets/img/pages/faq.png') repeat !important;
+    */
+  }
+  .faq-search {
+    // search input
+    .faq-search-input {
+      margin-bottom: 1.25rem;
+      input {
+        background-color: $white;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      .faq-search-input {
+        width: 75% !important;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      .faq-search-input {
+        width: 100% !important;
+      }
+    }
+    // search button
+    button {
+      right: 0.4rem;
+      top: 0.36rem;
+    }
+    @include media-breakpoint-down(xs) {
+      button {
+        padding: 0.65rem 1.3rem;
+      }
+    }
+  }
+  // Slide content show/hide
+  .faq {
+    .wrapper-content{
+      display: none;
+      &.active{
+        display: block;
+      }
+      .collapse-icon.accordion-icon-rotate:not(.left) .card-header {
+        padding-right: 3.5rem !important;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    .faq-title{
+      font-size: $h2-font-size;
+    }
+    .faq-subtitle{
+      font-size: $h4-font-size;
+    }
+  }
+}

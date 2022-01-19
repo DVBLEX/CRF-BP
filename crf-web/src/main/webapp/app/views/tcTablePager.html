@@ -1,0 +1,46 @@
+<div class="tc-table-pager">
+    <form name="tcTablePagination">
+        <div>
+            <button type="button" id="tcTablePagerButtonFirst" class="btn btn-default tc-table-pager-button" ng-click="tcTableChangePage(5)">
+                <span class="glyphicon glyphicon-backward"></span>
+            </button>
+        </div>
+        <div>
+            <button type="button" id="tcTablePagerButtonPrevious" class="btn btn-default tc-table-pager-button" ng-click="tcTableChangePage(3)">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+            </button>
+        </div>
+        <div class="tc-table-pager-separator">
+            <div></div>
+        </div>
+        <div class="tcTablePageDetails">
+            Page:
+            <input type="text" id="tcTablePagerCurrentPage" class="tc-table-pagegoto" ng-model="tcTable.currentPage" value="{{tcTable.currentPage}}"
+                ng-change="tcTableChangePage(1)">
+            of {{tcTable.pageCount}}
+        </div>
+        <div class="tc-table-pager-separator">
+            <div></div>
+        </div>
+        <div>
+            <button type="button" id="tcTablePagerButtonNext" class="btn btn-default tc-table-pager-button" ng-click="tcTableChangePage(2)">
+                <span class="glyphicon glyphicon-arrow-right"></span>
+            </button>
+        </div>
+        <div>
+            <button type="button" id="tcTablePagerButtonLast" class="btn btn-default tc-table-pager-button" ng-click="tcTableChangePage(4)">
+                <span class="glyphicon glyphicon-forward"></span>
+            </button>
+        </div>
+        <div class="pull-right text-right" style="float: right">
+            <select ng-model="tcTable.pageRecordCount" ng-change="tcTable.reloadTable()" class="tc-table-pagesize-select form-control" convert-to-number>
+                <option value="20" selected="selected">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div class="pull-right text-right margin-top" style="float: right">
+            <span class="tcTablePagerShowing">Showing {{tcTable.showingData}} of {{tcTable.count}} rows</span>
+        </div>
+    </form>
+</div>

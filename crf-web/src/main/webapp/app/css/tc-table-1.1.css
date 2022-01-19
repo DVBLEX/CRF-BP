@@ -1,0 +1,192 @@
+/*
+* 
+* Telclic Table for AngularJS
+* Version 1.1
+* CSS
+*
+*/
+.tc-table, .tc-nested-table {
+    float: left;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.tc-table>thead, .tc-nested-table>thead {
+    font-weight: bold;
+    white-space: nowrap;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+.tc-table>thead {
+    height: 40px;
+    line-height: 40px;
+}
+
+.tc-table>thead a {
+    font-size: 12px;
+}
+
+.tc-nested-table>thead {
+    height: 28px;
+    line-height: 28px;
+}
+
+.tc-table>thead>tr>td, .tc-table>thead>tr>th, .tc-nested-table>thead>tr>td, .tc-nested-table>thead>tr>th {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #dde1e4;
+    cursor: default;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.tc-table>thead>tr>td:hover, .tc-table>thead>tr>th:hover, .tc-nested-table>thead>tr>td:hover, .tc-nested-table>thead>tr>th:hover {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 3%, #e5e5e5 32%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 3%,#e5e5e5 32%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 3%,#e5e5e5 32%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+.tc-nested-table>tbody>tr {
+    background-color: #fff;
+}
+
+.tc-nested-table>tbody>tr:hover {
+    background-color: #e0e5e9;
+}
+
+.tc-table>tbody>.tcTRowSelected {
+    background-color: #b5dbf9 !important;
+    font-weight: bold;
+}
+
+.tc-table>tbody>tr, .tc-nested-table>tbody>tr {
+    border: 1px solid #d3dbe1;
+    color: #2b587a;
+}
+
+.tc-table>tbody>tr {
+    height: 38px;
+}
+
+.tc-table>tbody>.tc-row-for-nested-table {
+    height: auto !important;
+}
+
+.tc-table>tbody>tr>td, .tc-nested-table>tbody>tr>td {
+    cursor: default;
+    border-width: 0 1px 1px 0;
+    border-color: #d3dbe1;
+    border-style: solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.tc-table-extension-cell, .tc-nested-table-extension-cell {
+    padding: 0px !important;
+}
+
+.tc-table>tbody:nth-child(odd) {
+    background-color: #FFF;
+}
+
+.tc-table>tbody:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tc-table>tbody:hover {
+    background-color: #e0eaf1;
+}
+
+.tc-table>tbody>tr>.nowrap {
+    white-space: nowrap !important;
+}
+
+.tc-table-pagegoto {
+    max-width: 34px;
+    width: 34px;
+    border: 1px solid #C3CBD4;
+    background: #FFF;
+    padding: 7px;
+    margin: 0;
+    height: 28px;
+    min-width: 34px;
+    color: #2B587A;
+    font-size: 11px;
+}
+
+.tc-table-pager {
+    height: 46px;
+    text-align: left;
+    float: left;
+    width: 100%;
+    max-width: 100%;
+    border-left: 1px solid #d3dbe1;
+    border-right: 1px solid #d3dbe1;
+    border-bottom: 1px solid #d3dbe1;
+    padding: 5px;
+    background-color: #F7F7F7;
+}
+
+.tc-table-pager div {
+    float: left;
+}
+
+.tc-table-pager-separator {
+    height: 25px;
+    border-right: 1px solid #e6e6e6;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 6px;
+    padding: 0px;
+}
+
+.tc-table-pager-button, .tc-table-pager-button:hover {
+    border: none;
+    border-radius: 0px;
+    width: 50px !important;
+}
+
+.tc-table-pager-button span {
+    color: #5780ab;
+}
+
+.tcTablePageDetails {
+    color: #8a8a8a;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.tcTablePagerShowing {
+    color: #8a8a8a;
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 12px;
+    margin-right: 10px;
+    padding-top: 11px;
+}
+
+.tc-table-pagesize-select {
+    width: 75px;
+    min-width: 75px;
+    max-width: 75px;
+    height: 28px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.tc-no-pagination-footer {
+    height: 15px !important;
+}

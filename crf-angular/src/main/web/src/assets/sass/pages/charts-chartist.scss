@@ -1,0 +1,160 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.ct-grid{
+    stroke-dasharray: 0px;
+    stroke: rgba($black, 0.1);
+}
+
+.ct-label{
+    font-size: 0.9rem;
+}
+
+// Line with Area Chart 1
+.lineArea1 {
+    .ct {
+        &-series-a .ct-area {
+            fill-opacity: 0.3;
+            fill: $primary;
+        }
+        &-series-b .ct-area {
+            fill: $primary;
+            fill-opacity: 0.6;
+        }
+        &-line{
+            stroke-width: 0px;
+        }
+        &-point {
+            stroke-width: 0px;
+        }
+    }
+}
+
+// Line with Area Chart 2
+.lineArea2 {
+    .ct {
+        &-series-a {
+            .ct-area {
+                fill-opacity: 0.2;
+                fill: url(#gradient1) !important;
+            }
+            .ct-line,
+            .ct-point-circle {
+                stroke: $info;
+            }
+        }
+        &-series-b {
+            .ct-area {
+                fill: url(#gradient2) !important;
+                fill-opacity: 0.2;
+            }
+            .ct-line,
+            .ct-point-circle {
+                stroke: $warning;
+            }
+        }
+        &-point-circle {
+            stroke-width: 2px;
+            fill: $white;
+        }
+        &-line {
+            fill: none;
+            stroke-width: 1px;
+        }
+    }
+}
+
+// Line with Area Chart 3
+.lineArea3 {
+    .ct {
+        &-series-a {
+            .ct-area {
+                fill-opacity: 0.2;
+                fill: url(#gradient) !important;
+            }
+            .ct-line,
+            .ct-point-circle {
+                stroke: $info;
+            }
+        }
+        &-series-b {
+            .ct-area {
+                fill: $warning;
+                fill-opacity: 0.1;
+            }
+            .ct-line,
+            .ct-point-circle {
+                stroke: $warning;
+            }
+        }
+        &-point-circle {
+            stroke-width: 2px;
+            fill: $white;
+        }
+        &-line {
+            fill: none;
+            stroke-width: 1px;
+        }
+    }
+
+}
+
+// line Chart 1
+.lineChart1 {
+    filter: drop-shadow( 0px 20px 6px rgba($black,0.3) ); /* Same syntax as box-shadow, except for the spread property */
+    -webkit-filter: drop-shadow( 0px 20px 6px rgba($black,0.3) );
+
+    .ct-series-b .ct-line {
+        stroke: $success;
+    }
+    .ct-line {
+        stroke-width: 3px;
+    }
+    .ct-point {
+        stroke-width: 0px;
+    }
+}
+
+// line Chart 2
+.lineChart2 {
+    .ct {
+        &-point-circle {
+            stroke-width: 2px;
+            fill: $white;
+        }
+        &-series-a {
+            .ct-point-circle,
+            .ct-line {
+                stroke: $info;
+            }
+        }
+        &-series-b {
+            .ct-point-circle,
+            .ct-line {
+                stroke: $warning;
+            }
+        }
+        &-line {
+            fill: none;
+            stroke-width: 1px;
+        }
+    }
+}
+
+// bi-polar chart
+.bi-polar-chart {
+    .ct {
+        &-series-a .ct-area {
+            fill: $primary;
+        }
+        &-series-b .ct-area {
+            fill: $warning;
+        }
+        &-series-c .ct-area {
+            fill: $success;
+        }
+        &-series-d .ct-area {
+            fill: $danger;
+        }
+    }
+}

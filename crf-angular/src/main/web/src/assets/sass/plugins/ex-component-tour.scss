@@ -1,0 +1,48 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+@import "src/assets/sass/core/colors/palette-variables";
+
+// Tour styling
+.tour-container.shadow-md {
+  background-color: map-get($primary-color, base);
+  border-radius: $border-radius;
+
+  .shepherd-arrow:before {
+    background-color: map-get($primary-color, base) !important;
+  }
+  .shepherd-content {
+    padding: 0.5rem;
+    .shepherd-header {
+      background-color: transparent;
+      padding: 0.75rem;
+      .shepherd-title {
+        color: $white;
+        font-weight: 500;
+      }
+    }
+    .shepherd-text {
+      color: $white;
+    }
+    .shepherd-footer {
+      padding: 0;
+      justify-content: center;
+      margin-bottom: 0.4rem;
+      .shepherd-button {
+        margin: 0 5px;
+        border-radius: 4px;
+        padding: 0.15rem 1rem;
+        font-weight: 500;
+
+        &:hover {
+          background-color: map-get($primary-color, lighten-4) !important;
+          border-color: map-get($primary-color, lighten-4) !important;
+          color: map-get($primary-color, base) !important;
+        }
+      }
+    }
+  }
+  &[data-popper-placement="bottom"] { margin-top: 1rem !important; }
+  &[data-popper-placement="top"] { margin-bottom: 1rem !important; }
+  &[data-popper-placement="left"] { margin-right: 1rem !important; }
+  &[data-popper-placement="right"] { margin-left: 1rem !important; }
+}

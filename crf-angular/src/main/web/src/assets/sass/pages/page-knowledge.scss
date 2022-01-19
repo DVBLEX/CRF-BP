@@ -1,0 +1,97 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+// Knowledge base
+.kb-wrapper {
+  .kb-search {
+    .kb-search-input {
+      @include media-breakpoint-down(md) {
+        width: 75% !important;
+      }
+      @include media-breakpoint-down(xs) {
+        width: 100% !important;
+      }
+      input {
+        background-color: $white;
+      }
+      button {
+        right: 0.4rem;
+        top: 0.3rem;
+        @include media-breakpoint-down(xs) {
+          padding: 0.65rem 1.25rem;
+        }
+      }
+    }
+  }
+  .kb-content {
+    .kb-content-info i {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+
+// Knowledge Categories & Question
+.kb-categories, .kb-question {
+  .kb-ellipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .kb-effect {
+    transition: all 0.3s ease;
+    &:hover {
+      color: $primary !important;
+      margin-left: 0.5rem;
+    }
+  }
+  .kb-categories-text {
+    color: $gray-600;
+  }
+  // knowledge-base-categories & knowledge-base-question sidebar
+  @include media-breakpoint-down(sm) {
+    .kb-sidebar {
+      height: 100vh;
+      width: 260px;
+      background-color: $white;
+      position: absolute;
+      transform: translateX(-115%);
+      transition: all .3s ease;
+      z-index: 12;
+      left: 1rem;
+      top: 0;
+      padding: 1.1rem 0 0 1.2rem;
+      &.show {
+        transform: translateX(0%);
+      }
+      // sidebar close icon
+      .kb-close-icon {
+        position: absolute;
+        top: 0.9rem;
+        right: 0.9rem;
+      }
+    }
+    // knowledge base categories & question overlay
+    .kb-overlay {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 11;
+      visibility: hidden;
+      &.show {
+        visibility: visible;
+        transition: all .3s ease;
+        background-color: rgba($black, 0.6);
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    .kb-sidebar {
+      width: 250px;
+    }
+  }
+}

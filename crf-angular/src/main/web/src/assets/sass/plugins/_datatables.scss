@@ -1,0 +1,65 @@
+@import "src/assets/sass/core/colors/palette-variables";
+
+table.dataTable {
+  margin-bottom: 0.75rem !important;
+
+  thead {
+    th {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 600;
+
+      &[class*="sorting"]:not(.sorting_disabled) {
+        &:before {
+          content: "\e845";
+          font-family: feather;
+          top: 0.8rem;
+        }
+
+        &:after {
+          content: "\e842";
+          font-family: feather;
+          top: 1.6rem;
+          right: 0.85rem;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &.group {
+        background: $table-accent-bg;
+      }
+
+      td {
+        &.details-control {
+          background: url("../img/datatables/details_open.png") no-repeat center center;
+        }
+      }
+
+      &.shown {
+        td.details-control {
+          background: url("../img/datatables/details_close.png") no-repeat center center;
+        }
+      }
+
+      &.selected {
+        background-color: map-get($primary-color, "lighten-4");
+      }
+    }
+  }
+
+  tfoot {
+    th {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  &.table-striped {
+    tbody tr td {
+      border-top: 0;
+    }
+  }
+}

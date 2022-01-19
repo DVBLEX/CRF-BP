@@ -1,0 +1,174 @@
+@import "src/assets/sass/core/variables/variables";
+@import "src/assets/sass/core/variables/app-variables";
+
+.wizard {
+  >.steps {
+    .current-info {
+      display: none;
+    }
+    >ul {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      margin: 0;
+      padding: 0;
+      >li {
+        display: table-cell;
+        width: auto;
+        text-align: center;
+        position: relative;
+        a {
+          position: relative;
+          padding-top: 52px;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          display: block;
+          cursor: default;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: 9;
+          left: 0;
+          top: 43px;
+          width: 50%;
+          height: 5px;
+          background-color: $primary;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 9;
+          right: 0;
+          top: 43px;
+          width: 50%;
+          height: 5px;
+          background-color: $primary;
+        }
+        &:last-child {
+          &:after {
+            content: none;
+          }
+        }
+      }
+      >li.current {
+        a {
+          color: $primary !important;
+        }
+        .step {
+          border-color: $primary !important;
+        }
+        &:after {
+          background-color: $body-bg;
+        }
+        ~ li {
+          &:before,
+          &:after {
+            background-color: $body-bg;
+          }
+        }
+      }
+      >li.disabled,
+      >li.done {
+        a {
+          color: $body-color;
+        }
+      }
+      >li.done {
+        .step {
+          background-color: $primary !important;
+          border-color: $primary !important;
+          color: $white;
+        }
+      }
+      >li.error {
+        .step {
+          border-color: $danger !important;
+          color: $danger;
+        }
+      }
+      .step {
+        background-color: $white;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -24px;
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        line-height: 40px;
+        border: 5px solid $body-bg;
+        font-size: 1.3rem;
+        border-radius: 50%;
+      }
+    }
+  }
+  >.content {
+    >.title {
+      display: none;
+    }
+    >.body {
+      padding: 0 20px;
+    }
+  }
+  >.actions {
+    padding: 0 20px 20px;
+    >ul {
+      float: right;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      >li {
+        float: left;
+        + li {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-down(sm) {
+  .wizard {
+    >.steps {
+      >ul {
+        margin-bottom: 20px;
+        >li {
+          float: left;
+          width: 50%;
+          >a {
+            margin-bottom: 0;
+          }
+          &:first-child {
+            &:before {
+              content: '';
+            }
+          }
+          &:last-child {
+            &:after {
+              content: '';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wizard {
+    >.steps {
+      >ul {
+        >li {
+          width: 100%;
+        }
+        >li.current {
+          &:after {
+            background-color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+}
